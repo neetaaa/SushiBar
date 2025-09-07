@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #FAFAF7;
+    height: 100vh;
+    width: 100vw;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 100;
+}
+
+.navbar .img{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar .img .title{
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #333;
+}
+.navbar .img img{
+    height: 50px;
+    width: auto;
+}
+.navbar .icons i{
+    font-size: 24px;
+    color: #333;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.navbar .icons i:hover{
+    color: #bf2a0f;
+}
+
+.icons #active {
+    color: #bf2a0f;
+}
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+ /* soft sushi-inspired colors */
+    gap: 40px;
+    flex-wrap: wrap; /* responsive for smaller screens */
+}
+
+.section .news {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* Animation keyframes */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.section .news img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.section .news img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.section .text {
+    max-width: 500px;
+}
+
+.section .text h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 48px;
+    color: #d94f3d; /* sushi-themed accent */
+    margin-bottom: 20px;
+}
+
+.section .text p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;      
+    padding: 10vh 80px 0 80px;     
+    width: 100%;
+    height: auto;                
+    text-align: center;
+}
+
+.container .left, .container .right{
+    width: 45%;
+}
+
+.container .left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 45%;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 190px;
+    height: 300px;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    max-height: 120px; 
+    object-fit: cover;
+}
+
+.item h2 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+}
+
+.item p{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.item .price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.item .add-to-cart{
+    background-color: #bf2a0f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.item .add-to-cart:hover{
+    background-color: #a8280c;
+}
+
+.container .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 40px;
+    border-left: 2px solid #eee;
+    margin-top: 40px;
+    width: 45%;
+}
+.container .right h1{
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.container .right p{
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.container .right .checkout{
+    margin-top: 10px;
+    background-color: #bf2a0f;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+}
+.container .right .checkout:hover{
+    background-color: #a8280c;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+        margin-top: 20px;
+    }
+    .container .left, .container .right {
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+    .container .right {
+        margin-top: 40px;
+    }
+    .container .right h1 {
+        font-size: 28px;
+    }
+    .item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+  }
+  
+  .modal-content .quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .modal-content button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
